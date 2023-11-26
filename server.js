@@ -7,6 +7,10 @@ const app = express();
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+//panggil routers
+var routes = requiret('./routes');
+routes(app);
+
 
 app.listen(3000, () => {
     console.log('server started on port');
